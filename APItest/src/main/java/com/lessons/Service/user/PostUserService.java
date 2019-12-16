@@ -6,7 +6,7 @@ import com.lessons.Service.SetupApiService;
 import io.restassured.response.Response;
 //@Slf4j
 
-public class UserService extends SetupApiService {
+public class PostUserService extends SetupApiService {
 
     public AssertableResponse postUser(CreateUserModel user) {
         Response response =
