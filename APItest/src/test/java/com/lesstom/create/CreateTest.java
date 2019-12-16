@@ -41,7 +41,6 @@ public class CreateTest {
                 .body("name",  containsString(createUserModel.getName()))
                 .body("job", containsString(createUserModel.getJob()));
 
-
     }
     @Test
     public void testCreateUserV2() {
