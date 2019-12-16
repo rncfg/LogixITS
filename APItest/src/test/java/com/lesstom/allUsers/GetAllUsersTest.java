@@ -1,17 +1,20 @@
 package com.lesstom.singleUser;
 
 import com.github.javafaker.Faker;
+import com.lessons.Service.user.GetUserListService;
 import com.lessons.models.create.CreateUserModel;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static org.hamcrest.CoreMatchers.containsString;
+import static com.lessons.conditions.Conditions.statusCode;
+
 
 public class GetAllUsersTest {
     private String testUrl = "https://reqres.in/";
     private Faker faker = new Faker();
+    GetUserListService getUserListService = new GetUserListService();
 
     @BeforeClass
     public void preClass(){
@@ -36,5 +39,12 @@ public class GetAllUsersTest {
 
 
     }
+    @Test
+    public void testGetAllUsersTestV2() {
+        getUserListService.getUserList()
+                .shouldHave(statusCode(200));
+    }
+
+
 }
 

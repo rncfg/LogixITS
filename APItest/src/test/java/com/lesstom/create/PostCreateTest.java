@@ -1,7 +1,6 @@
 package com.lesstom.create;
 
 import com.github.javafaker.Faker;
-import com.lessons.Service.user.GetUserService;
 import com.lessons.models.create.CreateUserModel;
 import com.lessons.Service.user.PostUserService;
 import com.lessons.models.response.CreateUserResponseModel;
@@ -15,7 +14,7 @@ import static com.lessons.conditions.Conditions.statusCode;
 import static org.hamcrest.CoreMatchers.containsString;
 
 
-public class CreateTest {
+public class PostCreateTest {
 
     private String testUrl = "https://reqres.in/";
     private Faker faker = new Faker();
@@ -26,9 +25,6 @@ public class CreateTest {
         RestAssured. baseURI= testUrl;
 
     }
-
-
-
 
     @Test
     public void testCreateUser() {
